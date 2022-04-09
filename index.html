@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' https://www.npmjs.com; script-src 'self'"
+    />
+    <meta
+      http-equiv="X-Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'"
+    />
+    <link rel="stylesheet" type="text/css" href="./styles.css">
+    <title>Npm viewer</title>
+  </head>
+  <body>
+    <div class="head">
+      <h1>NPM Viewer</h1>
+      <div class="tools">
+        <div class="autocomplete">
+          <input type="text" id="packagename" placeholder="package name" />
+        </div>
+      </div>
+      <div class="tools">
+        <select id="startversion" aria-placeholder="start version"></select>
+        <select id="finishversion" aria-placeholder="finish version"></select>
+        <button type="button" id="showdata"  class="button">npm view</button>
+        <label class="container">raw output
+          <input type="checkbox" id="rawoutput">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+    </div>
+    <div id="versions"></div>
+    <script src="./renderer.js"></script>
+  </body>
+</html>
